@@ -148,6 +148,9 @@
           pageToken = data.nextPageToken;
         } while (pageToken);
 
+        // Sort alphabetically by name
+        allFiles.sort((a, b) => a.name.localeCompare(b.name));
+
         tracks = allFiles;
         filteredTracks = tracks;
         renderTrackList();
